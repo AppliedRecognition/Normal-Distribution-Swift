@@ -8,21 +8,21 @@
 
 import Foundation
 
-class NormalDistribution {
+public class NormalDistribution {
     
-    let mean: Double
-    let standardDeviation: Double
+    public let mean: Double
+    public let standardDeviation: Double
     
-    convenience init() {
+    public convenience init() {
         self.init(mean: 0, standardDeviation: 1)
     }
     
-    init(mean: Double, standardDeviation: Double) {
+    public init(mean: Double, standardDeviation: Double) {
         self.mean = mean
         self.standardDeviation = standardDeviation
     }
     
-    func cumulativeProbability(_ x: Double) throws -> Double {
+    public func cumulativeProbability(_ x: Double) throws -> Double {
         let dev = x - self.mean
         if abs(dev) > 40.0 * self.standardDeviation {
             return dev < 0 ? 0.0 : 1.0
